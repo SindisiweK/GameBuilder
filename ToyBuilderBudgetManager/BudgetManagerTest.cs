@@ -17,7 +17,7 @@ namespace ToyBuilderBudgetManager
             var sut = new BudgetManager();
             var expected = "EmergencyFund";
             //Act
-            var actual = sut.GetBudgetItems();
+            var actual = sut.GenerateItemList();
 
             //Assert
             Assert.AreEqual(expected,actual.First().expense);
@@ -29,7 +29,7 @@ namespace ToyBuilderBudgetManager
             var sut = new BudgetManager();
             var expected = "Savings";
             //Act
-            var actual = sut.GetBudgetItems();
+            var actual = sut.GenerateItemList();
 
             //Assert
             Assert.AreEqual(expected,actual.ElementAt(1).expense);
@@ -41,30 +41,24 @@ namespace ToyBuilderBudgetManager
             var sut = new BudgetManager();
             var expected = "FoodAndGrocerie";
             //Act
-            var actual = sut.GetBudgetItems();
+            var actual = sut.GenerateItemList();
 
             //Assert
             Assert.AreEqual(expected,actual.ElementAt(2).expense);
         }
-        [Test]
-        public void AddBudgetItems_GivenExtraCater_ShouldAddItemToAList()
-        {
-            //Arrange
-            var items = new BudgetModel
-            {
-                expense = "PocketMoney",
-                cost = 2100,
-                startDate = DateTime.Parse("2018-07-01"),
-                endDate = DateTime.Parse("2018-12-31")
-            };
-            var sut = new BudgetManager();
+        //[Test]
+        //public void GenerateCost_GivenBasicSalary_ShouldReturnItemAtTheIndex0f3()
+        //{
+        //    //Arrange
             
-            //Act
-            var actual = sut.AddItems(items);
+        //    var sut = new BudgetManager();
+        //    var expected = "FoodAndGrocerie";
+        //    //Act
+        //    var actual = sut.GenerateItemList();
 
-            //Assert
-            Assert.AreEqual(4,actual.Count);
-        }
+        //    //Assert
+        //    Assert.AreEqual(actual.ElementAt(2), expected);
+        //}
 
 
     }

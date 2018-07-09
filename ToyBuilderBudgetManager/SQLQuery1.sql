@@ -1,0 +1,6 @@
+
+CREATE DATABASE BudgetDB
+GO
+
+USE BudgetDB
+go
