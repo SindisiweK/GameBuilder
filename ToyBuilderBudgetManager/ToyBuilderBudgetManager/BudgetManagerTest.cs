@@ -65,7 +65,25 @@ namespace ToyBuilderBudgetManager
             //Assert
             Assert.AreEqual(4,actual.Count);
         }
+        [Test]
+        public void AddBudgetItems_GivenDefaultItems_ShouldAddItemToAList()
+        {
+            //Arrange
+            var items = new BudgetModel
+            {
+                expense = "PocketMoney",
+                cost = 2100,
+                startDate = DateTime.Parse("2018-07-01"),
+                endDate = DateTime.Parse("2018-12-31")
+            };
+            var sut = new BudgetManager();
 
+            //Act
+            var actual = sut.AddItems(items);
+
+            //Assert
+            Assert.AreEqual(4, actual.Count);
+        }
 
     }
 }

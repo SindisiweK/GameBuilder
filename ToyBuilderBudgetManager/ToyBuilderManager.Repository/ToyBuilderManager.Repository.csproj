@@ -6,11 +6,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C29042A7-FD1C-4B0F-9BD3-5D8DAD4C975A}</ProjectGuid>
+    <ProjectGuid>{990B0E29-1A6D-461B-88F5-B94586F4E27C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ToyBuilderBudgetManager</RootNamespace>
-    <AssemblyName>ToyBuilderBudgetManager</AssemblyName>
+    <RootNamespace>ToyBuilderManager.Repository</RootNamespace>
+    <AssemblyName>ToyBuilderManager.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -50,9 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BudgetManager.cs" />
-    <Compile Include="BudgetManagerTest.cs" />
-    <Compile Include="BudgetModel.cs" />
+    <Compile Include="BudgetManagerModel.cs" />
+    <Compile Include="BudgetManagerModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,7 +61,10 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BudgetManagerDB\" />
+    <ProjectReference Include="..\ToyBuilderBudgetManager.Model\ToyBuilderBudgetManager.Model.csproj">
+      <Project>{7CFAE122-EEED-4F34-A91C-8C8298DF4DA1}</Project>
+      <Name>ToyBuilderBudgetManager.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

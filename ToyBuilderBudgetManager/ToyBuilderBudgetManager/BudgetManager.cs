@@ -22,6 +22,18 @@ namespace ToyBuilderBudgetManager
 
         private static List<BudgetModel> AddBudgetItems()
         {
+            listOfExpenses();
+            return ItemList;
+        }
+
+        public List<BudgetModel> AddItems(BudgetModel items)
+        {
+            ItemList.Add(items);
+            return ItemList;
+        }
+
+        private static void listOfExpenses()
+        {
             ItemList = new List<BudgetModel>
             {
                 new BudgetModel()
@@ -46,15 +58,6 @@ namespace ToyBuilderBudgetManager
                     endDate = DateTime.Parse("2018-12-31")
                 }
             };
-
-
-            return ItemList;
-        }
-
-        public List<BudgetModel> AddItems(BudgetModel items)
-        {
-            ItemList.Add(items);
-            return ItemList;
         }
     }
 }
